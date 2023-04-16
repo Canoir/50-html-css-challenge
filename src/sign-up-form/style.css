@@ -5,6 +5,10 @@
   font-family: Sofia sans-serif;
 }
 
+:root{
+    --fullscreen-width: 24vw;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -24,13 +28,25 @@
   position: relative;
 }
 
+.header-container {
+  position: absolute;
+  z-index: 2;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+
+  text-align: center;
+  color: white;
+}
+
 .full-screen {
   background: #134e5e;
   background: -webkit-linear-gradient(to bottom right, #134e5e, #71b280);
   background: linear-gradient(to bottom right, #134e5e, #71b280);
 
   position: absolute;
-  width: 33%;
+  width: var(--fullscreen-width);
   height: 100%;
 }
 
