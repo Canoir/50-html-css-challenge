@@ -5,8 +5,8 @@
   font-family: Sofia sans-serif;
 }
 
-:root{
-    --fullscreen-width: 24vw;
+:root {
+  --fullscreen-width: 24vw;
 }
 
 .container {
@@ -67,4 +67,48 @@
   font-size: 1.25rem;
 
   cursor: pointer;
+}
+
+.form-container {
+  position: absolute;
+  left: var(--fullscreen-width);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  width: calc(100% - var(--fullscreen-width));
+  height: 100%;
+}
+
+.form-container > h1 {
+  color: #134e5e;
+  font-weight: bold;
+  font-size: 4rem;
+
+  margin-bottom: 1rem;
+}
+
+.form-container .socials{
+    display: flex;
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+.form-container .socials > i{
+    width: 3rem;
+    height: 3rem;
+
+    font-size: 1.5em;
+    cursor: pointer;
+
+    border-radius: 50%;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
