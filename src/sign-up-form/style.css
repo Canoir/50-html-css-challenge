@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sofia sans-serif;
+}
+
+:root {
+  --fullscreen-width: 27vw;
+
+  --change-transition: 1.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  --color-primary: #134e5e;
+  --color-secondary: #71b280;
+
+  --md-border-radius: 3rem;
+  --sm-border-radius: 1rem;
+  --xsm-border-radius: 0.25rem;
+
+  --submit-button-width: 12rem;
+  --submit-button-height: 3.5rem;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 70vw;
+  height: 70vh;
+  background-color: #eee;
+  border-radius: var(--md-border-radius);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+  position: relative;
+}
+
+.header-container {
+  position: absolute;
+  z-index: 2;
+  top: 33%;
+  left: -50%;
+  transform: translate(-50%);
+  width: 90%;
+
+  text-align: center;
+  color: white;
+
+  transition: var(--change-transition);
+}
+
+.wrapper.change .header-container{
+  left: 50%;
+}
+
+.full-screen {
+  z-index: 2;
+  overflow: hidden;
+  background: var(--color-primary);
+  background: -webkit-linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    #71b280
+  );
+  background: linear-gradient(to bottom right, var(--color-primary), #71b280);
+
+  position: absolute;
+  border-radius: var(--md-border-radius);
+  width: 100%;
+  height: 100%;
+  transition: var(--change-transition);
+}
+
+.wrapper.change .full-screen {
+  width: var(--fullscreen-width);
+
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.full-screen > button {
+  position: absolute;
+  text-transform: uppercase;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%);
+
+  width: var(--submit-button-width);
+  height: var(--submit-button-height);
+  border-radius: var(--md-border-radius);
+
+  background-color: transparent;
+  border: 1px solid white;
+
+  color: white;
+  font-size: 1.25rem;
+
+  cursor: pointer;
+}
+
+.form-container {
+  position: absolute;
+  left: -10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  width: calc(100% - var(--fullscreen-width));
+  height: 100%;
+
+  transition: var(--change-transition);
+}
+
+.wrapper.change .form-container {
+  left: var(--fullscreen-width);
+}
+
+.form-container > h1 {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 4rem;
+
+  margin-bottom: 1rem;
+}
+
+.form-container .socials {
+  display: flex;
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.form-container .socials > i {
+  width: 3rem;
+  height: 3rem;
+
+  font-size: 1.5em;
+  cursor: pointer;
+
+  border-radius: 50%;
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container > p {
+  margin-bottom: 3rem;
+}
+
+.inputs-container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inputs-container div.input {
+  display: flex;
+  width: 100%;
+  background-color: #dedede;
+  border-radius: var(--xsm-border-radius);
+  align-items: center;
+
+  padding: 0.75rem 1.25rem;
+  gap: 0.5rem;
+}
+
+.inputs-container div.input > i {
+  font-size: 12px;
+}
+
+.inputs-container div.input > input {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.inputs-container input[type="submit"] {
+  background-color: var(--color-primary);
+  border-radius: var(--md-border-radius);
+  border: 1px solid var(--color-secondary);
+  color: white;
+  width: var(--submit-button-width);
+  height: var(--submit-button-height);
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
