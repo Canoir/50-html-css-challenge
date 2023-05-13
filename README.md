@@ -5,4 +5,4 @@
 
 
 # 1st: Signup form
-![](outputs/sign-up-form/index.gif) 
+![](./outputs/sign-up-form/index.gif) 
