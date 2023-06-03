@@ -57,7 +57,7 @@
     color: var(--background-primary-color);
 }
 
-.header .details .title{
+.header .details .title, .body .head .title{
     font-size: 32px;
     text-transform: uppercase;
 }
@@ -84,4 +84,22 @@
     background: var(--background-primary-color);
     height: 100%;
     width: 100%;
+    padding: 32px;
+}
+
+.body .head{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.body .head .badge{
+    background-color: #71b280;
+    height: auto;
+    margin-bottom: 4px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: var(--background-primary-color);
 }
